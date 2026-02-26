@@ -29,8 +29,8 @@ This repository contains everything needed to understand, reproduce, and verify 
 
 | File | Description |
 |------|-------------|
-| `TZ0C_v4a_Peer_Review_Package.json` | **Single source of truth** — contains registry, molecular data, math sections, markdown content, and baseline simulation data |
-| `TZ0C_Lab_v4a_Peer_Review.ipynb` | Interactive Jupyter/Colab dashboard with hypothesis buttons and all visualizations |
+| `TZ0C_Lab_v4a` | **Single source of truth** — contains registry, molecular data, math sections, markdown content, and baseline simulation data |
+| `TZ0C_Lab_v4` | Interactive Jupyter/Colab dashboard with hypothesis buttons and all visualizations |
 | `README.md` | This file |
 
 ---
@@ -91,4 +91,5 @@ Each test produces a plot + statistical result + plain-English interpretation.
   version      = {v4a},
   url          = {https://github.com/YOUR-USERNAME/Truth-Zero-C},
   note         = {Peer-Review Package}
+
 }
