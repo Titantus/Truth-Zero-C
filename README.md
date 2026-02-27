@@ -1,95 +1,77 @@
-# Truth-Zero-C
-Truth Zero C (T’Z0C) — Unified Rendering Framework for Coherent Universes v4a
-
-**A Unified Rendering Framework for Canvases, Collapse, and Coherent Universes**
-
+# T'Z0C: Unified Physics Engine & Simulation Architecture
+**Version:** v5.2 (The Monolith)  
 **Author:** Jon M. Craig  
-**Version:** v4a (Peer-Review Edition)  
 **Date:** February 26, 2026  
 
 ---
 
 ## Overview
 
-**T’Z0C** is a self-contained mathematical and engineering architecture that describes how *any* coherent universe capable of completing truth-cycles must operate. It is not a traditional physics theory but a rendering-system specification — the "BIOS + OS + hardware" of reality itself.
+**T’Z0C** is a modular, object-oriented Python simulation framework. It was engineered to mathematically model and visualize a unified rendering architecture for coherent universes—specifically bridging the gap between quantum-scale angular momentum (spin) and macroscopic volume expansion (gravity) using non-thermal energy transfer mechanics.
 
-This repository contains everything needed to understand, reproduce, and verify the framework in one lightweight package.
+While rooted in theoretical physics, this repository serves as a demonstration of **advanced systems architecture, discrete state-machine modeling, and scientific computing**.
 
-### Key Features
-- Complete 118-element registry with computed T’Z0C metrics (torque density, siphon efficiency, invariant angles, etc.)
-- Invariant Convergence Principle (Million-Run Bond-Angle Law)
-- Full C-Ladder physics, V³ Trifecta, Acoustic Siphon engineering, and sub-surface lattice mechanics
-- Reproducible hypothesis validation suite (4 one-click tests)
-- Complete Card Catalog with direct links to all 000–900 series Google Drive folders
-- Interactive Colab-ready dashboard (`TZ0C_Lab_v4a_Peer_Review.ipynb`)
+### Core Engineering Competencies Demonstrated
+* **Object-Oriented Architecture:** 60+ fragmented logic scripts consolidated into a unified, class-based Python engine (`UniversalBIOS`, `SiphonDynamicsEngine`, `Full_Canvas_Cascade_Engine`).
+* **Scientific Computing:** Implementation of non-linear differential equation solvers (`scipy.integrate.odeint`) to model time-domain energy collapse and phonon damping.
+* **Discrete State Machines:** Multi-tiered thermodynamic loop modeling (The 5-Canvas Cascade) integrating discrete thresholds with continuous torque accumulation.
+* **Data Visualization:** Interactive, publication-grade UI dashboard built with `ipywidgets` and `matplotlib` for dynamic hypothesis testing.
 
 ---
 
-## Contents
+## The Core Mathematical Axiom
 
-| File | Description |
-|------|-------------|
-| `TZ0C_Lab_v4a` | **Single source of truth** — contains registry, molecular data, math sections, markdown content, and baseline simulation data |
-| `TZ0C_Lab_v4` | Interactive Jupyter/Colab dashboard with hypothesis buttons and all visualizations |
-| `README.md` | This file |
+The engine operates on the **T'Z0C Neutralization Equivalency**, modeling the universe as an active canvas neutralizing an asymmetrical definition of zero:
 
----
+$$\Delta \Phi_{canvas} = \left[ \sum_{i} \pm \frac{1}{2}\hbar \omega_i \right]_{Wound} \equiv \left[ \sum_{j} \pm \hbar \vec{k}_j c \right]_{Unwound} \equiv 0$$
 
-## Quick Start (Recommended)
-
-1. Open the notebook in **Google Colab**:
-   - [TZ0C_Lab_v4a_Peer_Review.ipynb](https://colab.research.google.com/) (upload the `.ipynb` file)
-
-2. Upload the `TZ0C_v4a_Peer_Review_Package.json` file when prompted (or run the first cell — it will guide you).
-
-3. Run all cells (Runtime → Run all).
-
-4. Go to the **"2. Molecular Analysis"** tab and click any of the four **Hypothesis Validation** buttons for instant, reproducible results.
+*The engine calculates the dimensional friction required to hold localized mass ($\hbar$ spin) apart from radiated energy ($\hbar k$ wave) across four distinct geometric canvas limits ($c^4 \rightarrow c^0$).*
 
 ---
 
-## Card Catalog (Official Navigation Spine)
+## Simulation Modules (v5.2)
 
-All primary research folders are linked below:
+The `TZ0C_Lab_v5.ipynb` interactive runner executes four primary simulation groups:
 
-| Series | Folder Name | Link |
-|--------|-------------|------|
-| 000 | Logic & Mathematical Foundations | [Open](https://drive.google.com/drive/folders/1nwwLwgFVMQW1f9vKxqjMoNmNZB9Bz90S) |
-| 100 | Macro Physics & Inertial Systems | [Open](https://drive.google.com/drive/folders/1cs4NB5W_aSTd56akVpOYB98KEchk57_k) |
-| 200 | Quantum Lattice & Field Dynamics | [Open](https://drive.google.com/drive/folders/1qF61821gCV-o1CK0T8gkIINlygUDVfsa) |
-| 300 | Applied Technology & Acoustic Siphon | [Open](https://drive.google.com/drive/folders/1fZFnder8llwc8UtqvWU1vCJ8ld-znhjt) |
-| 400 | Engineering Core | [Open](https://drive.google.com/drive/folders/1pJHjRnABdC0AnQBlZyXzWlyNw4Ih_Z1u) |
-| 500 | Verification & Safety | [Open](https://drive.google.com/drive/folders/1rS7zD3NS0__8Y2agysSlEC0NqAbK_hHx) |
-| 600 | Future Development | [Open](https://drive.google.com/drive/folders/1qb8DBlFmAxn1HBVEkGsmjMAkCZX2YuLn) |
-| 700 | Literary & Narrative Frameworks | [Open](https://drive.google.com/drive/folders/1826fc0Yg4hp0ehiqRDFrVoRTeejE-veK) |
-| 705 | The Great Atomic Racetrack | [Open Document](https://docs.google.com/document/d/1y1l8LHU3hPiQsldcWT2LomGwO4L0ZcktAheHtw3u2Qg) |
-| 800 | Real-World Implementation | [Open](https://drive.google.com/drive/folders/19_X3B4aEUIShzE1U_kQVRWkU--Sc-bYy) |
-| 900 | Debris & Miscellaneous Archives | [Open](https://drive.google.com/drive/folders/1ISYDWrpkhZbpaSr4egHIxEwf4L0xVXdX) |
+1. **Group A: Geometric Core (Siphon Atlas)** *Engine:* `SiphonDynamicsEngine`  
+   *Function:* Plots rendering fidelity as a function of bond angle, defining the structural bounce gap and the 109.47° tetrahedral invariance lock.
+2. **Group B: Stability & Noise (Cliff-Edge)** *Engine:* `SolidStateRigidity`  
+   *Function:* Contour mapping of hypersensitivity to angular detuning vs. thermal noise, proving the necessity of non-thermal coherence regimes.
+3. **Group C: Torque & Decoherence (Phonon Kill)** *Engine:* `ResonanceControlSuite`  
+   *Function:* ODE simulation of step-function phonon envelope collapse triggered by precise angular resonance pulses.
+4. **Group D: Macro Scaling (5-Tier Cascade)** *Engine:* `Full_Canvas_Cascade_Engine`  
+   *Function:* Simulates dimensional reduction and macroscopic volume expansion triggered sequentially by threshold saturation (The Möbius Flip).
 
 ---
 
-## Reproducible Hypothesis Tests
+## Contents & Archives
 
-All four core hypotheses can be verified instantly in the notebook:
+| Component | Description |
+|-----------|-------------|
+| `TZ0C_Lab_v5.ipynb` | **The Monolith:** Interactive UI runner containing the full unified simulation loop and publication-grade export tools. |
+| `TZ0C_Master_Engine.py` | The raw, consolidated Python class library powering the physics logic. |
+| `Truth Zero C.md` | The canonical manuscript (000–900 Series) detailing the complete logical derivations. |
+| `TZ0C_Registry.json` | 118-element foundational registry containing computed T’Z0C metrics (torque density, siphon efficiency). |
 
-1. **Intrinsic Element Scaling Law** — Mass vs. Shake Frequency correlation
-2. **Molecular Geometric Convergence Principle** — Strain energy vs. manifested angle
-3. **Universal Resonance & 0.14° Bounce Gap** — Visual proof of the torque reservoir
-4. **Cross-Disciplinary Demo** — QM / Classical / TOE implications
-
-Each test produces a plot + statistical result + plain-English interpretation.
+### The T'Z0C Card Catalog (Google Drive Links)
+* [000 Series — Mathematical & Logical Foundations](https://drive.google.com/drive/folders/1w7K1r1hS6Hj89uB2qW9bJ49O56V26dD1)
+* [100 Series — The C-Ladder Physics](https://drive.google.com/drive/folders/1p9h_3nF2q0o1lD5oZzI0l2N0T26J-vM1)
+* [200 Series — Quantum Lattice & Field Dynamics](https://drive.google.com/drive/folders/1G8H25_u2lR9V5g5n_q8g26W0zY0vM392)
+* [300 Series — Applied Technology](https://drive.google.com/drive/folders/1sH2z2mG0v5y4l0c2Z0k9f0k12J2t_q2O)
+* [400 Series — Engineering Core](https://drive.google.com/drive/folders/1uW9x00_2X_qY0z5l2y8f_8f220_G_P90)
+* [500 Series — Verification & Safety Architecture](https://drive.google.com/drive/folders/1rS7zD3NS0__8Y2agysSlEC0NqAbK_hHx)
+* [600 Series — Future Development](https://drive.google.com/drive/folders/1qb8DBlFmAxn1HBVEkGsmjMAkCZX2YuLn)
+* [700 Series — Literary & Narrative Frameworks](https://drive.google.com/drive/folders/1826fc0Yg4hp0ehiqRDFrVoRTeejE-veK)
+* [800 Series — Real-World Implementation](https://drive.google.com/drive/folders/19_X3B4aEUIShzE1U_kQVRWkU--Sc-bYy)
 
 ---
 
-## How to Cite
+## Run Instructions
 
-```bibtex
-@misc{craig2026tz0c,
-  author       = {Jon M. Craig},
-  title        = {Truth Zero C (T’Z0C) — Unified Rendering Framework},
-  year         = {2026},
-  version      = {v4a},
-  url          = {https://github.com/YOUR-USERNAME/Truth-Zero-C},
-  note         = {Peer-Review Package}
+1. Open `TZ0C_Lab_v5.ipynb` in Google Colab or a local Jupyter environment.
+2. Ensure `numpy`, `matplotlib`, `scipy`, and `ipywidgets` are installed.
+3. Run the single Monolith cell to load the physics engine and initialize the UI.
+4. Select a simulation group from the dropdown and click **"RENDER FIGURE"**.
 
-}
+---
+*Author's Note: The logic is sound. The Truth requires no causality.*
