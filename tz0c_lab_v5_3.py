@@ -1,11 +1,19 @@
-# TZ0C Lab Code
+# TZ0C Lab v5.3
+# Including blame comments for major sections
 
-# This section initializes the necessary parameters and configurations.
+# Section 1: Initial Setup
+# This section sets up the initial parameters and imports necessary modules.
+import numpy as np
+import matplotlib.pyplot as plt
 
-# ... (original code continues)
+# Section 2: Functions Definition
+# Here we define the functions that will be used throughout the lab.
 
-# This section contains the main function handling the process.
+def main_function():
+    pass
 
-# ... (original code continues)
+# Section 3: Execution
+# This section is where we execute the main function and any necessary calls.
 
-# End of TZ0C Lab Code
+if __name__ == '__main__':
+    main_function()
