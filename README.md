@@ -1,6 +1,6 @@
 # T'Z0C: Unified Physics Engine & Simulation Architecture
-**Version:** v5.2 (The Peer-Review Monolith)  
-**Repository:** [GitHub - Truth-Zero-C/TZ0C_Lab_v5.ipynb](https://github.com/Titantus/Truth-Zero-C/blob/main/TZ0C_Lab_v5.ipynb)  
+**Version:** v7.0.0 (The Peer-Review Monolith)  
+**Repository:** [GitHub - Truth-Zero-C/TZ0C_Lab_v5.ipynb](https://github.com/Titantus/Truth-Zero-C/blob/main/⚙️ T'Z0C CORE ENGINE V7.0.0.ipynb)  
 **Author:** Jon M. Craig  
 
 ---
