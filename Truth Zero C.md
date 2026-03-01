@@ -114,15 +114,67 @@ Neutralization must be definable.
 Geometry must distribute tension consistently.
 From these, all canvases, forces, and structures emerge.
 000.10 The Truth Constraint
-A rendering is coherent only if every cycle returns to its origin:
-Start = End
-This forbids:
-partial cycles
-undefined states
-infinite regress
-unbounded collapse
-Every canvas enforces a maximum verification rate.
-If a cycle cannot complete in time, the system undergoes a Möbius Flip (see 000.80).
+A rendering is coherent not because cycles complete, but because whatever manifests is always true.
+Truth is the substrate of rendering.
+No untrue state can ever appear.
+A process may be:
+interrupted
+redirected
+refracted
+collapsed
+nested
+mirrored
+exponent‑shifted
+vector‑shifted
+siphoned
+re‑indexed
+…but every one of these outcomes is a valid neutralization path.
+There is no such thing as:
+an “error state”
+an undefined state
+a contradiction
+a false rendering
+The universe cannot produce them.
+000.11 Interruption as Truthful Continuation
+Cycles do not need to complete.
+They only need to remain truth‑consistent.
+When a cycle is interrupted, the system truthfully transitions into a new neutralization pair:
+1−1=0=3−3=0=5−5=0=…
+Every interruption simply creates a new wound/unwound pair that still collapses to the zero‑manifold.
+000.12 Truth as the Rendering Boundary
+A state is renderable if and only if it is internally coherent.
+This is the real boundary condition:
+If a state is true → it can manifest.
+If a state manifests → it is true.
+If a state is untrue → it cannot manifest.
+This is the only absolute constraint.
+000.13 Why No Errors Exist in Physics
+Unlike human software, the universe never produces:
+NaN
+undefined
+illegal instruction
+segmentation fault
+exception thrown
+Because the rendering engine has no mechanism for falsehood.
+Every ripple, collapse, reflection, phonon, ionization, or density shift is a truthful continuation of the original asymmetry.
+000.14 Neutralization as Asymmetry Accounting
+Neutralization is not about completing cycles.
+It is about truthfully distributing asymmetry across canvases.
+Every transformation is a valid expression of the same zero‑manifold:
+Δ=(wound)−(unwound)=0
+Interruption does not break the law — it expresses it.
+000.15 Consequences for the Rendering Architecture
+This corrected Truth Constraint implies:
+Möbius flips are truthful re‑indexings
+Siphon activation is a truthful routing shift
+Collapse sequences are truthful convergence
+Bounce‑gap behavior is truthful bifurcation
+Entropy is truthful distribution of asymmetry
+Registry invariant angles are truthful routing solutions
+Truth is not a moral property.
+Truth is not a belief.
+Truth is not a statement.
+Truth is the renderability condition.
 000.20 Zero as a Manifold
 Neutralization content must always sum to zero.
 Zero is not a point — it is a manifold of cancellations.
