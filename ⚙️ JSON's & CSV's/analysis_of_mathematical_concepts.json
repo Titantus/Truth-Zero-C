@@ -1,0 +1,70 @@
+[
+  {
+    "type": "Direct Duplication",
+    "concept_name": "Angle Gate",
+    "reason": "Exact duplicate of a previously seen concept name and definition.",
+    "original_index": 28
+  },
+  {
+    "type": "Direct Duplication",
+    "concept_name": "Frequency Gate",
+    "reason": "Exact duplicate of a previously seen concept name and definition.",
+    "original_index": 29
+  },
+  {
+    "type": "Potential Overlap/Implicit Redundancy",
+    "concept_keyword": "Triality",
+    "related_concepts_count": 3,
+    "related_concepts_names": [
+      "0.3 Triality",
+      "0.5 Geometric Selectors",
+      "Consequence"
+    ],
+    "reason": "Multiple concepts (3) related to 'Triality' found across the document. Potential for consolidation or explicit cross-referencing."
+  },
+  {
+    "type": "Potential Overlap/Implicit Redundancy",
+    "concept_keyword": "Canvas",
+    "related_concepts_count": 7,
+    "related_concepts_names": [
+      "Neutralization Equivalency Equation",
+      "A.2 Canvas Symbols",
+      "C.3 Canvas Fields",
+      "E.13 Inter\u2011Canvas Latency Proof",
+      "E.19 Neutralization Equivalency Equation",
+      "E.2 Emergent Geometry (The Tetrahedral Lock)",
+      "E.21 The Bifurcation Trigger (PJTE Double-Well)"
+    ],
+    "reason": "Multiple concepts (7) related to 'Canvas' found across the document. Potential for consolidation or explicit cross-referencing."
+  },
+  {
+    "type": "Potential Overlap/Implicit Redundancy",
+    "concept_keyword": "Siphon",
+    "related_concepts_count": 9,
+    "related_concepts_names": [
+      "Siphon Interaction",
+      "Prediction 1 --- Inertial Drift",
+      "Elegoo/Siphon Timing Rule",
+      "Prediction 7 --- 0.20\u00b0 Stability Window",
+      "Prediction 8 --- Transparency Mode",
+      "Siphon\u2011Active Predictions (Must Be Observed)",
+      "A.4 Efficiency & Siphon Symbols",
+      "E.11\u2003Siphon Efficiency (\u03b7)",
+      "E.22 Phase-Locked Loop (Siphon Activation)"
+    ],
+    "reason": "Multiple concepts (9) related to 'Siphon' found across the document. Potential for consolidation or explicit cross-referencing."
+  },
+  {
+    "type": "Potential Overlap/Implicit Redundancy",
+    "concept_keyword": "Omega",
+    "related_concepts_count": 5,
+    "related_concepts_names": [
+      "E.20 The Governing Law: Time-Resolution Equation",
+      "E.2 Emergent Geometry (The Tetrahedral Lock)",
+      "E.21 The Bifurcation Trigger (PJTE Double-Well)",
+      "E.22 Phase-Locked Loop (Siphon Activation)",
+      "E.23 Transparency Mode (Phonon Suppression)"
+    ],
+    "reason": "Multiple concepts (5) related to 'Omega' found across the document. Potential for consolidation or explicit cross-referencing."
+  }
+]

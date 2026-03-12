@@ -1,0 +1,134 @@
+[
+    {
+        "trial_id": "standard_wallball_yoyo_run_1",
+        "discovered_peak_angle_deg": 109.4712200000019,
+        "peak_siphon_efficiency": 126.87876582151098,
+        "material_properties": {
+            "material": "Diamond",
+            "rigidity": 3.0,
+            "magnetic_type": "diamagnetic",
+            "opacity": "clear",
+            "phase": "crystalline",
+            "element_symbol": "C",
+            "proposed_structure": "Tetrahedral",
+            "proposed_node_type": "Universal",
+            "t_z0c_rigidity": 10.0,
+            "r": 1.0,
+            "m": 1.0,
+            "omega": 1.0,
+            "bond_angles": [
+                109.47122
+            ],
+            "angle_tolerances": [
+                0.05
+            ],
+            "angle_weights": [
+                1.0
+            ],
+            "t_z0c_optimal_angle": 109.47122,
+            "t_z0c_tolerance_window": 0.05
+        },
+        "simulation_parameters": {
+            "thermal_noise": 0.001,
+            "window_deg": 0.2,
+            "target_angle_used_deg": 109.47,
+            "tested_sweet_spot": null,
+            "lambda_nm": 532.0,
+            "THETA0": 109.47122,
+            "DELTA_THETA": 0.001,
+            "temperature_K": 298.15,
+            "pressure_unitless": 1.0,
+            "is_falsification_run": false,
+            "dynamic_modulator_strength": 0.2
+        },
+        "notes": "Standard simulation with dynamic modulator strength (20% increase in tolerance)."
+    },
+    {
+        "trial_id": "standard_wallball_yoyo_run_8269",
+        "discovered_peak_angle_deg": 109.46798351221196,
+        "peak_siphon_efficiency": 0.11925781970890423,
+        "material_properties": {
+            "material": "Diamond",
+            "rigidity": 3.0,
+            "magnetic_type": "diamagnetic",
+            "opacity": "clear",
+            "phase": "crystalline",
+            "element_symbol": "C",
+            "proposed_structure": "Tetrahedral",
+            "proposed_node_type": "Universal",
+            "t_z0c_rigidity": 3.0,
+            "r": 1.0,
+            "m": 1.0,
+            "omega": 1.0,
+            "bond_angles": [
+                109.47122
+            ],
+            "angle_tolerances": [
+                0.15661824389410414
+            ],
+            "angle_weights": [
+                1.0
+            ],
+            "t_z0c_optimal_angle": 109.47122,
+            "t_z0c_tolerance_window": 0.15661824389410414
+        },
+        "simulation_parameters": {
+            "thermal_noise": 0.0007604514558736853,
+            "window_deg": 0.15661824389410414,
+            "target_angle_used_deg": 109.47122,
+            "tested_sweet_spot": 109.46973486743371,
+            "lambda_nm": 0.5,
+            "THETA0": 109.47122,
+            "DELTA_THETA": 0.01,
+            "temperature_K": 163.03694678084253,
+            "pressure_unitless": 295.3953629293948,
+            "is_falsification_run": false,
+            "dynamic_modulator_strength": 0.2
+        },
+        "notes": "Standard simulation with dynamic modulator strength (20.0% increase in tolerance)."
+    },
+    {
+        "trial_id": "standard_wallball_yoyo_run_03ad8e5e",
+        "discovered_peak_angle_deg": 109.4700000000019,
+        "peak_siphon_efficiency": 126.87876582151098,
+        "material_properties": {
+            "material": "Diamond",
+            "rigidity": 3.0,
+            "magnetic_type": "diamagnetic",
+            "opacity": "clear",
+            "phase": "crystalline",
+            "element_symbol": "C",
+            "proposed_structure": "Tetrahedral",
+            "proposed_node_type": "Universal",
+            "t_z0c_rigidity": 10.0,
+            "r": 1.0,
+            "m": 1.0,
+            "omega": 1.0,
+            "bond_angles": [
+                109.47
+            ],
+            "angle_tolerances": [
+                0.01
+            ],
+            "angle_weights": [
+                1.0
+            ],
+            "t_z0c_optimal_angle": 109.47,
+            "t_z0c_tolerance_window": 0.01
+        },
+        "simulation_parameters": {
+            "thermal_noise": 0.001,
+            "window_deg": 0.2,
+            "target_angle_used_deg": 109.47,
+            "tested_sweet_spot": null,
+            "lambda_nm": 532.0,
+            "THETA0": 109.47,
+            "DELTA_THETA": 0.01,
+            "temperature_K": 298.15,
+            "pressure_unitless": 1.0,
+            "is_falsification_run": false,
+            "dynamic_modulator_strength": 0.2
+        },
+        "comments": "Standard simulation with dynamic modulator strength activated."
+    }
+]
