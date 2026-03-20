@@ -52,6 +52,11 @@ Routing mode is selected by Δθ relative to Δθ_window:
 - **RECYCLE** — Re-indexing (partial neutralization)  
 - **RESIDUE** — Heat sink / neutrino exhaust (failure to fully cancel)
 
+### **Residue Fog = Neutrino Exhaust Equation**
+\[
+\text{Neutrino\_Exhaust} = \Omega \cdot \rho_{\nu\_conflict}
+\]
+
 ### Geometry & Attractors
 Tetrahedral lock: θ_lock = arccos(-1/3) ≈ 109.47122° (strongest 3-space attractor).
 
@@ -59,7 +64,7 @@ Under excess lag the potential becomes bistable:
 \[ V(\theta) = a(\theta - \theta_\text{lock})^4 - b(\theta - \theta_\text{lock})^2 \]
 
 - Bare Bounce-Gap: Δθ_null ≈ ±0.14122°  
-- Practical Bounce-Gap: ±0.20°–0.25°  
+- Practical Bounce-Gap Δθ_window: ≈ ±0.20°–0.25°  
 - Latent inward bias drives manifest angles below θ_lock (e.g. H₂O 104.5°).
 
 **Material Siphon Efficiency**
@@ -91,6 +96,7 @@ Every process manifests through three coupled non-symmetric projections:
 
 **State Vector:**  
 \[ \mathbf{S} = (s_1, s_2, s_3),\quad s_i \in \mathbb{R} \]
+
 
 Any hidden topology is reconstructable from the trifecta. Symmetry exists only at DOT.
 
