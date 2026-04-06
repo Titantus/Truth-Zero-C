@@ -1,39 +1,56 @@
-# T0C Lattice Simulator
+# **T0C Lattice Simulator**
 
 Lightweight Python simulation for predicting material properties from lattice geometry and detuning parameters.
 
-## Overview
-This project implements a geometric routing model that maps lattice angles and mismatch parameters to observable properties such as:
-- Optical transparency vs. opacity
-- Selective reflection / pigment behavior
-- Thermal routing and phonon dissipation
+## **Overview**
+This project implements a geometric routing model that maps lattice angles and mismatch parameters to observable behaviors such as:
 
-Built with Python, NumPy, Pandas, and Plotly. Runs entirely in Colab.
+- optical transparency vs. opacity  
+- selective reflection and pigment behavior  
+- thermal routing and phonon dissipation  
 
-## Key Features
-- Computes routing efficiency (η) from three detuning parameters: Δθ (angular), Δχ (cloud), Δf (frequency)
-- Visualizes coherence cliffs and carrier windows (photons, phonons, conduction)
-- Interactive sweeps for fin/lattice angles and transparency predictions
-- Reproduces qualitative trends for known materials (diamond transparent, graphite opaque, Cu/Au selective reflection)
+The simulator is built with Python, NumPy, Pandas, and Plotly, and runs entirely in Google Colab.
 
-## Repository Contents
-- `Torque_Routing.ipynb` — Main simulation notebook with dashboard and sweeps
-- Supporting visualizations (transparency maps, pigment engine, fin-array results, high-pressure anomalies)
+## **Core Workflow — The Truth Requirement**
+The simulator uses a simple epistemic tagging system to keep assumptions honest and prevent over‑extrapolation:
 
-## How to Run
-1. Open `Torque_Routing.ipynb` in Google Colab
-2. Run all cells — the notebook loads the registry and generates the 4-panel dashboard + sweeps
-3. Modify `theta_range` or material parameters in the sweep sections for custom experiments
+- **⧉ Observable** — measured or simulated data  
+- **⧠ Model‑Established** — internally consistent behavior  
+- **⇢ Derived Prediction** — logical consequence awaiting validation  
+- **→ ? Potential** — unverified continuation beyond the current resolution  
 
-## Use Cases Explored
-- Predicting transparency windows in aluminum-based lattices (sapphire/ALON analogs)
-- Mapping phonon (heat) vs photon (transparency) routing as a function of angle
-- Rapid virtual screening of lattice geometries for thermal or optical applications
+This workflow does not reject assumptions; it labels them so that corrections become calibration events rather than hidden errors.
 
-## Technologies
+## **Key Features**
+- Computes routing efficiency (η) from three detuning parameters:  
+  - Δθ (angular detuning)  
+  - Δχ (cloud mismatch)  
+  - Δf (frequency clash)  
+- Visualizes coherence cliffs and routing windows  
+- Interactive sweeps for lattice angles and transparency predictions  
+- Reproduces qualitative trends for known materials:  
+  - diamond transparent  
+  - graphite opaque  
+  - Cu/Au selective reflection  
+
+## **Repository Contents**
+- **Torque_Routing.ipynb** — main simulation notebook with dashboard and sweeps  
+- **/docs/T0C.md** — full logic specification and epistemic tagging rules  
+- Supporting visualizations (transparency maps, pigment engine, high‑pressure anomalies)
+
+## **How to Run**
+1. Open `Torque_Routing.ipynb` in Google Colab  
+2. Run all cells — the notebook loads the registry and generates the dashboard  
+3. Modify `theta_range` or material parameters for custom experiments  
+
+## **Use Cases Explored**
+- Predicting transparency windows in aluminum‑based lattices (sapphire/ALON analogs)  
+- Mapping phonon vs. photon routing as a function of angle  
+- Rapid virtual screening of lattice geometries for optical or thermal applications  
+
+## **Technologies**
 Python • NumPy • Pandas • Plotly • Colab
 
-## Status
-Active personal project. Open to collaboration on materials screening or thermal routing extensions.
-
-Feedback and contributions welcome.
+## **Status**
+Active personal project.  
+Open to collaboration on materials screening, routing models, or thermal‑optical simulations.
