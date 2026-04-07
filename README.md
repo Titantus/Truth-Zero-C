@@ -1,56 +1,69 @@
 # **T0C Lattice Simulator**
 
-Lightweight Python simulation for predicting material properties from lattice geometry and detuning parameters.
+**Geometric routing model for predicting material properties from lattice geometry and detuning parameters.**
 
-## **Overview**
-This project implements a geometric routing model that maps lattice angles and mismatch parameters to observable behaviors such as:
+## Overview
 
-- optical transparency vs. opacity  
-- selective reflection and pigment behavior  
-- thermal routing and phonon dissipation  
+This project implements a lightweight Python simulation framework that maps lattice geometry (primarily angular detuning from the tetrahedral lock) and mismatch parameters to observable material behaviors, including:
 
-The simulator is built with Python, NumPy, Pandas, and Plotly, and runs entirely in Google Colab.
+- Optical transparency vs. opacity
+- Selective reflection and pigment formation
+- Thermal routing and phonon dissipation patterns
 
-## **Core Workflow — The Truth Requirement**
-The simulator uses a simple epistemic tagging system to keep assumptions honest and prevent over‑extrapolation:
+The simulator is built entirely in Google Colab using Python, NumPy, Pandas, and Plotly. It emphasizes transparent, labeled assumptions and generates interactive dashboards for exploration.
 
-- **⧉ Observable** — measured or simulated data  
-- **⧠ Model‑Established** — internally consistent behavior  
-- **⇢ Derived Prediction** — logical consequence awaiting validation  
-- **→ ? Potential** — unverified continuation beyond the current resolution  
+## Core Workflow — The Truth Requirement
 
-This workflow does not reject assumptions; it labels them so that corrections become calibration events rather than hidden errors.
+At the heart of T0C is a simple epistemic discipline that keeps modeling honest:
 
-## **Key Features**
-- Computes routing efficiency (η) from three detuning parameters:  
-  - Δθ (angular detuning)  
-  - Δχ (cloud mismatch)  
-  - Δf (frequency clash)  
-- Visualizes coherence cliffs and routing windows  
-- Interactive sweeps for lattice angles and transparency predictions  
-- Reproduces qualitative trends for known materials:  
-  - diamond transparent  
-  - graphite opaque  
-  - Cu/Au selective reflection  
+- **⧉ Observable** — measured or simulated data within current resolution
+- **⧠ Model-Established** — internally consistent and validated behavior
+- **⇢ Derived Prediction** — logical consequence awaiting confirmation
+- **→ ? Potential** — unverified continuation beyond the last measured coordinate (κ)
 
-## **Repository Contents**
-- **Torque_Routing.ipynb** — main simulation notebook with dashboard and sweeps  
-- **/docs/T0C.md** — full logic specification and epistemic tagging rules  
-- Supporting visualizations (transparency maps, pigment engine, high‑pressure anomalies)
+This workflow does not reject assumptions — it labels them explicitly so that discovering an error becomes a clean calibration opportunity rather than a hidden flaw. It prevents over-extrapolation and turns speculative ideas into structured, falsifiable simulations.
 
-## **How to Run**
-1. Open `Torque_Routing.ipynb` in Google Colab  
-2. Run all cells — the notebook loads the registry and generates the dashboard  
-3. Modify `theta_range` or material parameters for custom experiments  
+## Key Features
 
-## **Use Cases Explored**
-- Predicting transparency windows in aluminum‑based lattices (sapphire/ALON analogs)  
-- Mapping phonon vs. photon routing as a function of angle  
-- Rapid virtual screening of lattice geometries for optical or thermal applications  
+- Computes routing efficiency **η** from three detuning parameters:
+  - Δθ (angular detuning from ~109.47° tetrahedral lock)
+  - Δχ (electron cloud mismatch)
+  - Δf (frequency clash)
+- Interactive sweeps and coherence cliff visualizations
+- Reproduces qualitative trends for known materials:
+  - Tetrahedral lattices (diamond, Si, Ice X) → high η → transparent/rigid
+  - Metals (Cu, Au) → low η → selective reflection
+  - Graphite → low η → opaque/conductive
+- Transparency window predictions for aluminum-based lattices and sapphire/ALON analogs
 
-## **Technologies**
-Python • NumPy • Pandas • Plotly • Colab
+## Repository Contents
 
-## **Status**
-Active personal project.  
-Open to collaboration on materials screening, routing models, or thermal‑optical simulations.
+- **`Torque_Routing.ipynb`** — Main simulation notebook with dashboards and interactive sweeps
+- **`docs/T0C.md`** — Complete logic specification and epistemic tagging rules
+- Supporting visualizations (routing phase diagrams, pigment engine, high-pressure anomalies)
+
+## How to Run
+
+1. Open `Torque_Routing.ipynb` in Google Colab
+2. Run all cells — the notebook loads the registry and generates the interactive dashboard
+3. Adjust material parameters or angle ranges to run custom experiments
+
+## Use Cases Explored
+
+- Rapid virtual screening of lattice geometries for optical or thermal performance
+- Predicting transparency windows in aluminum-based and sapphire/ALON-type materials
+- Mapping phonon vs. photon routing as a function of geometry
+- Exploring high-pressure phase behavior and acoustic anomalies
+
+## Technologies
+
+Python • NumPy • Pandas • Plotly • Google Colab
+
+## Status & Collaboration
+
+Active personal R&D project focused on geometric modeling and simulation.  
+Open to collaboration on materials screening, routing models, thermal-optical simulations, or related computational work.
+
+---
+
+**Built as a demonstration of systems thinking, hypothesis-driven simulation, and transparent modeling practices.**
