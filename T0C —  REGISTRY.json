@@ -1,0 +1,665 @@
+{
+  "meta": {
+    "schema_version": "4.1",
+    "registry_version": "v7.5.1-HW",
+    "author": "Jonathon M. Craig, Navy Veteran",
+    "last_updated": "2026-04-18",
+    "description": "T0C Unified Registry – parameters for v7.4 Unified Master theory"
+   },
+   "mathematical_registry": {
+      "description": "Geometric derivations locked in Appendix: T0C — Mathematical Registry - The Scaling Prism",
+      "reference": "See full appendix for proofs of p_c, √3 normalization, √8 projection, and nozzle angles."
+      },
+      "core_derivations": {
+         "p_c": {
+            "formula": "N_spokes / (2 * pi * render_radius_R)",
+            "value": 0.0497,
+            "origin": "Radial spoke density / CCZ saturation"
+         },
+         "theta_tetra": {
+            "formula": "arccos(-1/3)",
+            "origin": "√3 vector normalization from cubic lattice embedding"
+         },
+         "bounce_gap": {
+            "formula": "p_c * sqrt(8)",
+            "origin": "√8 tetrahedral edge length lattice projection",
+            "value": 0.14122        
+      },
+      "reference": "See full appendix 'T0C Mathematical Registry: The Scaling Prism' for proofs and implications"
+   },
+    "constants": {
+      "theta_metal": 45.1,
+      "neutrino_loop_residual": 1.0e-9,
+      "neutrino_exhaust_energy_scale": 1.0e-15,
+      "torque_mesh_base_constant": 300,
+      "sbw_recovery_factor": 0.15,
+      "sbw_recovery_notes": "15% temporal drag observed during 1e-9 Loop-Residual re-indexing transients.",
+      "theta_tetra": 109.47122063449069,
+      "theta_siphon": 70.52877936550931,
+      "bounce_gap_neutral": 0.0,
+      "bounce_gap_load_induced": 0.14122063449069344,
+      "saturation_threshold": 0.95,
+      "latency_limit_theta": 1.0,
+      "back_pressure_coefficient": 0.002,
+      "sigma_theta": 0.2,
+      "sigma_f": 0.01,
+      "sigma_chi": 0.05,
+      "f0": 162000000000000.0,
+      "N_spokes": 20,
+      "kappa_resolution": 1.0,
+      "render_radius_R": 64.0,
+      "cosmology_and_saturation": {
+        "kappa_sat_pc": 0.0497,
+        "ccz_default_alpha": 200.0,
+        "ccz_cosmologic_alpha": 32.5,
+        "h0_local_target": 73.04,
+        "h0_cosmic_target": 67.4,
+        "p_scale_defaults": {
+          "ThetaNorm": 180.0,
+          "FNorm": 1e14,
+          "ChiNorm": 1.0
+        },
+        "notes": "p_c defines the 5% resolution-stagger boundary. ccz_default_alpha (200) applies to lab-scale rigid transitions like Ice VII/X. ccz_cosmologic_alpha (32.5) applies to cosmic-scale smoothed transitions like Hubble Drag."
+      },
+      "chaos_signature": {
+      "description": "Transient Residue-Mode spike (η ≤ 0.01) occurring at p ≈ p_c during resolution collapse at event horizons.",
+      "p_threshold": 0.0497,
+      "eta_threshold": 0.01,
+      "mechanism_summary": "At p ≈ p_c the canvas cannot resolve the Straight↔Loop decision, forcing a brief collapse into Residue-Mode before committing to Loop-Mode.",
+      "observables": [
+         "photon-ring turbulence",
+         "accretion-disk heating",
+         "Hawking-like exhaust"
+      ],
+      "registry_alignment": "Aligned with Part III §10.10.2 (Zipper Effect) and the Singularity Hub Solver definition of Chaos.",
+      "status": "Model-Established"
+      },
+
+
+      "scale_dependent_alpha": {
+        "lab_material": {
+          "alpha_p": 200.0,
+          "description": "High-resolution lab scales (sharp transitions, e.g. Ice VII/X acoustic anomaly)",
+          "derivation": "Registry default – matches material phase-jump sharpness"
+        },
+        "mesoscopic_device": {
+          "alpha_p": 120.0,
+          "description": "Mesoscopic / nano-device scales (phonons, electronics)",
+          "derivation": "Logarithmic interpolation between lab and stellar scales"
+        },
+        "stellar_galactic": {
+          "alpha_p": 65.0,
+          "description": "Stellar and galactic scales (intermediate smoothing)",
+          "derivation": "Logarithmic interpolation between lab and cosmological scales"
+        },
+        "cosmological": {
+          "alpha_p": 32.5,
+          "description": "Cosmological scales (Hubble Tension CCZ Drag)",
+          "derivation": "Exact fit: ln(67.4/73.04) / (0.0497)^2 ≈ 32.5 (SH0ES + Planck data)"
+        },
+        "event_horizon": {
+          "alpha_p": 85.0,
+          "description": "Black-hole / singularity scales (5% Chaos Zone)",
+          "derivation": "Intermediate value tuned to expected photon-ring turbulence width"
+        },
+        "quantum_gravity": {
+          "alpha_p": 12.5,
+          "description": "Deep quantum-gravity / CCZ saturation limit (strongest averaging)",
+          "derivation": "Strong smoothing consistent with NV-tension → G emergence"
+         }
+      },   
+      "latency_limit_ms": 200.0
+      },
+      "field_requirements":{
+         "element_required_fields":[
+            "theta_eq",
+            "f_shake",
+            "d_cloud",
+            "lambda_shake",
+            "notes",
+            "ThetaNorm",
+            "FNorm",
+            "ChiNorm",
+            "p_c",
+            "alpha_p",
+            "HubType",
+            "hub_bias",
+            "P_scale",
+            "k_T",
+            "UPathSkeleton",
+            "element_bias"
+         ],
+         "global_constants":[
+            "theta_tetra",
+            "f0",
+            "sigma_theta",
+            "sigma_f",
+            "sigma_chi"
+         ]
+      },
+   "validation_tests":[
+      {
+         "id":"pred_1_delta_theta",
+         "name":"\u0394\u03b8 Double-Well Bounce Gap",
+         "description":"Compute quartic double-well potential and verify bounce_gap ~0.14122\u00b0"
+      },
+      {
+         "id":"pred_2_ice_vii_x",
+         "name":"Ice VII/X Acoustic Anomaly",
+         "description":"Shows non-linear velocity jump as \u0394\u03b8 collapses under pressure."
+      },
+      {
+         "id":"pred_9_sio2_stishovite",
+         "name":"SiO2 Stishovite Transition",
+         "description":"Acoustic velocity jump as lattice shifts to higher coordination."
+      },
+      {
+         "test_name":"conceptual_plots_status",
+         "description":"Status of conceptual plots generated to qualitatively align with T0C predictions.",
+         "predictions_status":{
+            "\u0394\u03b8 Double-Well / Bounce-Gap":"qualitative_support",
+            "Ice VII/X Acoustic Anomaly":"qualitative_support",
+            "SiO2 Quartz to Stishovite Transition":"qualitative_support",
+            "10% Mass Modulation Experiment":"promising_awaits_hardware",
+            "95% Gearbox Limit":"qualitative_support"
+         }
+      }
+   ],
+   "theory_alignment":{
+      "routing_selector":"\u03b7 (Gaussian probability from \u0394\u03b8, \u0394\u03c7, \u0394f)",
+      "pigment_condition":"Color emerges only in RESIDUE when \u03b7 \u2264 0.01",
+      "key_insight":"Geometry (\u0394\u03b8) sets potential; electron cloud (\u0394\u03c7) and frequency (\u0394f) determine actual routing via \u03b7.",
+      "ccz_concept":"Singularities are Routing Hubs with a measurable Critical Coupling Zone (CCZ). The CCZ is the spatial neighborhood where p <= p_c and routing decisions are forced.",
+      "state_map_concept":"Two-axis state map: Temperature (energy) vs Compression (torque) determines effective_align and material state via routing rules.",
+      "simulation_hooks":{
+         "eta_control":{
+            "module_name":"\u03b7-Selector",
+            "description":"Simulation hook for controlling or monitoring the \u03b7 (routing probability) parameter.",
+            "parameters":[
+               "eta_value",
+               "eta_min",
+               "eta_max",
+               "eta_update_rate"
+            ]
+         },
+         "ccz_engine":{
+            "module_name":"CCZ Solver",
+            "description":"Simulation hook for processing and resolving Complex Coherent Zones (CCZ) logic.",
+            "parameters":[
+               "ccz_threshold",
+               "ccz_stability_factor",
+               "ccz_resolution_algo"
+            ]
+         },
+         "detuning_resolver":{
+            "module_name":"Detuning Engine",
+            "description":"Simulation hook for managing and resolving detuning events (\u0394\u03c7, \u0394f mismatches).",
+            "parameters":[
+               "detuning_threshold_chi",
+               "detuning_threshold_f",
+               "detuning_correction_factor"
+            ]
+         },
+         "canvas_dynamics_evaluator":{
+            "module_name":"NV & \u03c4\u2098\u2092\u1d66\u1d62\u1d64\u209b Evaluator",
+            "description":"Simulation hook for evaluating NV (coherence pivot) and \u03c4\u2098\u2092\u1d66\u1d62\u1d64\u209b (canvas update rate).",
+            "parameters":[
+               "nv_threshold",
+               "tmobius_rate",
+               "kappa_gradient_sensitivity"
+            ]
+         }
+      }
+   },
+   "registry_rules":{
+      "core_formulas":{
+         "shake_hz":"1.62e14 * (Z / 6)**0.52",
+         "delta_theta":"theta_eq - theta_tetra",
+         "delta_f":"(f_shake - f0) / f0",
+         "delta_chi":"(d_cloud / lambda_shake) - 1",
+         "eta":"np.exp( -(delta_theta**2 / (2*sigma_theta**2) + delta_f**2 / (2*sigma_f**2) + delta_chi**2 / (2*sigma_chi**2)) )",
+         "proximity_metric_p":"p = np.sqrt( ((delta_theta)/ThetaNorm)**2 + ((delta_f)/FNorm)**2 + ((delta_chi)/ChiNorm)**2 )",
+         "eta_from_p":"eta_p = np.exp( -alpha_p * (p**2) )",
+         "thermal_detuning":"delta_theta_T = k_T * (T - T_ref)",
+         "compressive_alignment":"align_P = 1.0 - (1.0 / (1.0 + pressure / P_scale))"
+      },
+      "classification_rules":{
+         "gear_assignment":"if abs(delta_theta) < 0.2 then 'tetra' else if abs(theta_eq - theta_siphon) < 0.2 then 'siphon' else 'metal'",
+         "routing_mode":"Computed from \u03b7: STRAIGHT if eta > 0.5, LOOP if 0.1 < eta <= 0.5, RECYCLE if 0.01 < eta <= 0.1, RESIDUE if eta <= 0.01",
+         "invariant_angle":"theta_eq",
+         "ccz_rule":"Inside CCZ if p <= p_c (element or geometry class p_c overrides meta default)",
+         "hub_type_rule":"HubType \u2208 {Dark, Light, Neutral} (default inferred from hub_bias or eta_peak)",
+         "singularity_event":"If p <= p_c and eta crosses a critical threshold, record SingularityBounce with inversion sign s and u*"
+      },
+      "derived_properties":{
+         "color_suggestion":"Tetra: transparent/clear (high \u03b7); Residue: metallic gray/silver or selective pigment (Cu red-orange, Au yellow, graphite black)",
+         "u_path_parameterization":"UPathSkeleton: optional param template for canonical U-paths; used to compute continuous delta functions \u0394\u03b8(u), \u0394f(u), \u0394\u03c7(u)"
+      }
+   },
+   "elements":{
+      "C":{
+         "Z":6,
+         "symbol":"C",
+         "name":"Carbon",
+         "theta_eq":109.47122063449069,
+         "f_shake":162000000000000.0,
+         "d_cloud":1.85e-10,
+         "lambda_shake":1.85e-10,
+         "notes":"Perfect tetrahedral \u2192 high \u03b7, STRAIGHT, transparent/rigid (diamond allotrope)",
+         "ThetaNorm":180.0,
+         "FNorm":100000000000000.0,
+         "ChiNorm":1.0,
+         "p_c":0.01,
+         "alpha_p":200.0,
+         "HubType":"Dark",
+         "hub_bias":-1,
+         "P_scale":1000000000.0,
+         "k_T":0.0001,
+         "UPathSkeleton":"tetra_default",
+         "element_bias":0.9
+      },
+      "Si":{
+         "Z":14,
+         "symbol":"Si",
+         "name":"Silicon",
+         "theta_eq":109.47,
+         "f_shake":null,
+         "d_cloud":1.85e-10,
+         "lambda_shake":1.85e-10,
+         "notes":"Tetrahedral semiconductor \u2192 high \u03b7 potential, foundational for electronics",
+         "ThetaNorm":180.0,
+         "FNorm":100000000000000.0,
+         "ChiNorm":1.0,
+         "p_c":0.05,
+         "alpha_p":200.0,
+         "HubType":"Dark",
+         "hub_bias":-1,
+         "P_scale":1000000000.0,
+         "k_T":0.0001,
+         "UPathSkeleton":"default_u_template_v1",
+         "element_bias":0.5
+      },
+      "Ge":{
+         "Z":32,
+         "symbol":"Ge",
+         "name":"Germanium",
+         "theta_eq":109.47,
+         "f_shake":null,
+         "d_cloud":1.85e-10,
+         "lambda_shake":1.85e-10,
+         "notes":"Heavier tetrahedral semiconductor; tests frequency effects on \u03b7",
+         "ThetaNorm":180.0,
+         "FNorm":100000000000000.0,
+         "ChiNorm":1.0,
+         "p_c":0.05,
+         "alpha_p":200.0,
+         "HubType":"Dark",
+         "hub_bias":-1,
+         "P_scale":1000000000.0,
+         "k_T":0.0001,
+         "UPathSkeleton":"default_u_template_v1",
+         "element_bias":0.5
+      },
+      "B":{
+         "Z":5,
+         "symbol":"B",
+         "name":"Boron",
+         "theta_eq":120.0,
+         "f_shake":null,
+         "d_cloud":1.85e-10,
+         "lambda_shake":1.85e-10,
+         "notes":"Trigonal geometry \u2192 good test for RECYCLE/RESIDUE behavior, high-strength materials",
+         "ThetaNorm":180.0,
+         "FNorm":100000000000000.0,
+         "ChiNorm":1.0,
+         "p_c":0.05,
+         "alpha_p":200.0,
+         "HubType":"Dark",
+         "hub_bias":-1,
+         "P_scale":1000000000.0,
+         "k_T":0.0001,
+         "UPathSkeleton":"default_u_template_v1",
+         "element_bias":0.5
+      },
+      "P":{
+         "Z":15,
+         "symbol":"P",
+         "name":"Phosphorus",
+         "theta_eq":109.5,
+         "f_shake":null,
+         "d_cloud":1.85e-10,
+         "lambda_shake":1.85e-10,
+         "notes":"White phosphorus (tetrahedral) vs black (layered) \u2014 excellent allotrope test",
+         "ThetaNorm":180.0,
+         "FNorm":100000000000000.0,
+         "ChiNorm":1.0,
+         "p_c":0.05,
+         "alpha_p":200.0,
+         "HubType":"Dark",
+         "hub_bias":-1,
+         "P_scale":1000000000.0,
+         "k_T":0.0001,
+         "UPathSkeleton":"default_u_template_v1",
+         "element_bias":0.5
+      },
+      "Al":{
+         "Z":13,
+         "symbol":"Al",
+         "name":"Aluminum",
+         "theta_eq":109.0,
+         "f_shake":null,
+         "d_cloud":1e-10,
+         "lambda_shake":1.85e-10,
+         "notes":"Lightweight metal \u2192 RESIDUE mode, good for conductivity and structural tests",
+         "ThetaNorm":180.0,
+         "FNorm":100000000000000.0,
+         "ChiNorm":1.0,
+         "p_c":0.05,
+         "alpha_p":200.0,
+         "HubType":"Dark",
+         "hub_bias":-1,
+         "P_scale":1000000000.0,
+         "k_T":0.0001,
+         "UPathSkeleton":"default_u_template_v1",
+         "element_bias":0.5
+      },
+      "Ti":{
+         "Z":22,
+         "symbol":"Ti",
+         "name":"Titanium",
+         "theta_eq":109.0,
+         "f_shake":null,
+         "d_cloud":1e-10,
+         "lambda_shake":1.85e-10,
+         "notes":"Transition metal with strong technological use (alloys, photocatalysis)",
+         "ThetaNorm":180.0,
+         "FNorm":100000000000000.0,
+         "ChiNorm":1.0,
+         "p_c":0.05,
+         "alpha_p":200.0,
+         "HubType":"Dark",
+         "hub_bias":-1,
+         "P_scale":1000000000.0,
+         "k_T":0.0001,
+         "UPathSkeleton":"default_u_template_v1",
+         "element_bias":0.5
+      },
+      "Fe":{
+         "Z":26,
+         "symbol":"Fe",
+         "name":"Iron",
+         "theta_eq":109.47,
+         "f_shake":null,
+         "d_cloud":1e-10,
+         "lambda_shake":1.85e-10,
+         "notes":"Near-tetrahedral angle but high Z/cloud mismatch \u2192 RESIDUE (metallic)",
+         "ThetaNorm":180.0,
+         "FNorm":100000000000000.0,
+         "ChiNorm":1.0,
+         "p_c":0.05,
+         "alpha_p":200.0,
+         "HubType":"Dark",
+         "hub_bias":-1,
+         "P_scale":1000000000.0,
+         "k_T":0.0001,
+         "UPathSkeleton":"default_u_template_v1",
+         "element_bias":0.5
+      },
+      "Cu":{
+         "Z":29,
+         "symbol":"Cu",
+         "name":"Copper",
+         "theta_eq":109.0,
+         "f_shake":null,
+         "d_cloud":1e-10,
+         "lambda_shake":1.85e-10,
+         "notes":"Metal-Lock \u2192 RESIDUE, selective red-orange pigment",
+         "ThetaNorm":180.0,
+         "FNorm":100000000000000.0,
+         "ChiNorm":1.0,
+         "p_c":0.05,
+         "alpha_p":200.0,
+         "HubType":"Dark",
+         "hub_bias":-1,
+         "P_scale":1000000000.0,
+         "k_T":0.0001,
+         "UPathSkeleton":"default_u_template_v1",
+         "element_bias":0.5
+      },
+      "Ag":{
+         "Z":47,
+         "symbol":"Ag",
+         "name":"Silver",
+         "theta_eq":109.0,
+         "f_shake":null,
+         "d_cloud":1e-10,
+         "lambda_shake":1.85e-10,
+         "notes":"Metal-Lock \u2192 RESIDUE, neutral silver reflector",
+         "ThetaNorm":180.0,
+         "FNorm":100000000000000.0,
+         "ChiNorm":1.0,
+         "p_c":0.05,
+         "alpha_p":200.0,
+         "HubType":"Dark",
+         "hub_bias":-1,
+         "P_scale":1000000000.0,
+         "k_T":0.0001,
+         "UPathSkeleton":"default_u_template_v1",
+         "element_bias":0.5
+      },
+      "Au":{
+         "Z":79,
+         "symbol":"Au",
+         "name":"Gold",
+         "theta_eq":109.0,
+         "f_shake":null,
+         "d_cloud":1e-10,
+         "lambda_shake":1.85e-10,
+         "notes":"Metal-Lock \u2192 RESIDUE, selective yellow pigment",
+         "ThetaNorm":180.0,
+         "FNorm":100000000000000.0,
+         "ChiNorm":1.0,
+         "p_c":0.05,
+         "alpha_p":120.0,
+         "HubType":"Light",
+         "hub_bias":1,
+         "P_scale":1000000000.0,
+         "k_T":0.0002,
+         "UPathSkeleton":"metal_default",
+         "element_bias":0.2
+      },
+      "At":{
+         "Z":85,
+         "symbol":"At",
+         "name":"Astatine",
+         "theta_eq":109.47,
+         "f_shake":null,
+         "d_cloud":2.1e-10,
+         "lambda_shake":1.85e-10,
+         "notes":"Routing-neutral singularity. \u0394\u03b8 inward vs \u0394\u03c7 outward conflict. High \u03a9 \u2192 coherence grind \u2192 rapid decay.",
+         "ThetaNorm":180.0,
+         "FNorm":100000000000000.0,
+         "ChiNorm":1.0,
+         "p_c":0.05,
+         "alpha_p":200.0,
+         "HubType":"Neutral",
+         "hub_bias":0,
+         "P_scale":1000000000.0,
+         "k_T":0.0001,
+         "UPathSkeleton":"neutral_faultline",
+         "element_bias":0.0
+      },
+      "O":{
+         "Z":8,
+         "symbol":"O",
+         "name":"Oxygen",
+         "theta_eq":104.5,
+         "f_shake":null,
+         "d_cloud":1.4e-10,
+         "lambda_shake":1.85e-10,
+         "notes":"Near siphon boundary \u2192 partial RESIDUE",
+         "ThetaNorm":180.0,
+         "FNorm":100000000000000.0,
+         "ChiNorm":1.0,
+         "p_c":0.05,
+         "alpha_p":200.0,
+         "HubType":"Dark",
+         "hub_bias":-1,
+         "P_scale":1000000000.0,
+         "k_T":0.0001,
+         "UPathSkeleton":"default_u_template_v1",
+         "element_bias":0.5
+      }
+   },
+   "molecules":{
+      "CH4":{
+         "formula":"CH4",
+         "name":"Methane",
+         "theta_eq":109.47,
+         "d_cloud":1.85e-10,
+         "lambda_shake":1.85e-10,
+         "f_shake":162000000000000.0,
+         "notes":"High siphon efficiency (\u03b7 \u2248 1)"
+      },
+      "H2O":{
+         "formula":"H2O",
+         "name":"Water",
+         "theta_eq":104.5,
+         "d_cloud":1.4e-10,
+         "lambda_shake":1.85e-10,
+         "f_shake":100000000000000.0,
+         "P_scale":1.871,
+         "notes":"Calibrated to 64 GPa transition per v7.5 scaling rules."
+      }
+   },
+   "tests":{
+      "core_predictions":{
+         "prediction_1_delta_theta":{
+            "id":"pred_1_delta_theta",
+            "name":"\u0394\u03b8 Double-Well Bounce Gap",
+            "description":"Simulates the quartic double-well and computes the Bounce-Gap (~0.14122\u00b0).",
+            "code_snippet":"def plot_func_1(ax):\n    import numpy as np\n    theta_lock = 109.47122\n    a = 1.0\n    b = 0.005\n    peak_separation = np.sqrt(b / (2 * a))\n    delta_theta = 2 * peak_separation\n    theta_range = np.linspace(theta_lock - 1.0, theta_lock + 1.0, 500)\n    V = a * (theta_range - theta_lock)**4 - b * (theta_range - theta_lock)**2\n    ax.plot(theta_range, V, label='Double-Well Potential')\n    ax.axvline(theta_lock, color='gray', linestyle='--', label=f'Tetra Lock {theta_lock:.5f}\u00b0')\n    ax.axvline(theta_lock - peak_separation, color='red', linestyle=':', label=f'Peak 1')\n    ax.axvline(theta_lock + peak_separation, color='red', linestyle=':', label=f'Peak 2')\n    ax.set_title('Prediction #1: Bounce-Gap Split')\n    ax.set_xlabel('Theta (\u00b0)')\n    ax.set_ylabel('Potential')\n    ax.legend()\n    ax.grid(True, alpha=0.3)\n    print(f'Calculated \u0394\u03b8 Split: {delta_theta:.5f}\u00b0')"
+         },
+         "prediction_2_acoustic_anomaly_ice":{
+            "id":"pred_2_ice_vii_x",
+            "name":"Prediction #2 \u2014 Acoustic Anomaly in Ice VII/X",
+            "description":"Shows non-linear velocity jump as \u0394\u03b8 collapses under pressure.",
+            "code_snippet":"def plot_func_2(ax):\n    import pandas as pd\n    import seaborn as sns\n    data = {'Phase': ['Ih','V','VI','VII','VII','VII','X'], 'Pressure_GPa': [0,1,5,20,40,60,80], 'Velocity': [1.5,4.0,5.8,6.8,7.5,8.2,8.5]}\n    df = pd.DataFrame(data)\n    sns.lineplot(data=df, x='Pressure_GPa', y='Velocity', marker='o', color='#82E0AA', ax=ax)\n    ax.axvline(60, color='red', linestyle='--')\n    ax.set_title('Ice VII/X Acoustic Anomaly')\n    ax.set_xlabel('Pressure (GPa)')\n    ax.set_ylabel('Velocity (km/s)')\n    print('Non-linear jump near 60 GPa supports siphon engagement.')"
+         },
+         "prediction_9_sio2_stishovite":{
+            "id":"pred_9_sio2_stishovite",
+            "name":"Prediction #9 \u2014 SiO2 Quartz to Stishovite",
+            "description":"Acoustic velocity jump as lattice shifts to higher coordination.",
+            "code_snippet":"def plot_func_9(ax):\n    import pandas as pd\n    import seaborn as sns\n    data = {'Phase':['Quartz','Coesite','Stishovite'], 'Pressure_GPa':[0,5,20], 'Velocity':[6.1,8.2,11.8]}\n    df = pd.DataFrame(data)\n    sns.lineplot(data=df, x='Pressure_GPa', y='Velocity', marker='o', color='#00ffcc', ax=ax)\n    ax.set_title('SiO2 Stishovite Transition')\n    ax.set_xlabel('Pressure (GPa)')\n    ax.set_ylabel('Velocity (km/s)')\n    print('Velocity spike validates \u0394\u03b8 collapse and siphon engagement.')"
+         }
+      }
+   },
+   "operational_defaults":{
+      "p_c_default":0.05,
+      "alpha_p_default":200.0,
+      "ThetaNorm_default":180.0,
+      "FNorm_default":100000000000000.0,
+      "ChiNorm_default":1.0,
+      "T_ref_default":300.0,
+      "state_thresholds":{
+         "solid":0.8,
+         "liquid":0.4,
+         "gas":0.0
+      },
+      "effective_align_formula":"effective_align = element_bias - delta_theta_T + align_P"
+   },
+   "simulation_hooks":{
+      "functions":[
+         {
+            "name":"compute_detunings",
+            "signature":"compute_detunings(element, T, P)",
+            "returns":"delta_theta, delta_f, delta_chi, p, eta_p, inside_ccz"
+         },
+         {
+            "name":"Sword of Omens",
+            "registry_mapping": "theory_alignment.simulation_hooks.oscillation_debt_metrology",
+            "description": "Calculates the real-time geometric deviation from theta_tetra (109.47°) and determines the trigger point for Snap Resolution or NV grounding."
+         },
+         {
+            "name":"u_path_sample",
+            "signature":"u_path_sample(element, u_array, T_profile, P_profile)",
+            "returns":"arrays of \u0394\u03b8(u), \u0394f(u), \u0394\u03c7(u), p(u), \u03b7(u), s(u)"
+         },
+         {
+            "name":"detect_bounce_events",
+            "signature":"detect_bounce_events(eta_array, p_array, p_c, thresholds)",
+            "returns":"list of bounce events with u*, s, eta(u*), p(u*)"
+         },
+         {
+            "name":"plot_ccz_heatmap",
+            "signature":"plot_ccz_heatmap(slice_params)",
+            "returns":"visual CCZ contour and singularity label"
+         },
+         {
+            "name":"sweep_TP",
+            "signature":"sweep_TP(element, T_range, P_range)",
+            "returns":"phase map (state vs T,P) and hysteresis loops"
+         }
+      ]
+   },
+   "falsification_and_diagnostics":{
+      "tests_to_add":[
+         {
+            "id":"ccz_heatmap_test",
+            "name":"CCZ Heatmap",
+            "description":"Plot p across a spatial slice and overlay CCZ contour p=p_c; verify hub locations and singularity labels."
+         },
+         {
+            "id":"u_path_inversion_test",
+            "name":"U-Path Inversion Trace",
+            "description":"Parameterize canonical U-paths and record \u03b7(u), p(u), s(u); identify inversion u* and compare to registry expectations."
+         },
+         {
+            "id":"tp_hysteresis_test",
+            "name":"Temperature-Pressure Hysteresis",
+            "description":"Sweep T and P cyclically and record \u03b7 vs control parameter to detect hysteresis predicted by U-shape causality."
+         },
+         {
+            "id":"spectral_ejection_test",
+            "name":"Spectral Ejection for Light Hubs",
+            "description":"Measure radiative spectral lines as p crosses p_c for candidate Light Hubs; compare to predicted straight-mode ejection."
+         }
+      ]
+   },
+   "quantitative_force_mappings":{
+      "electromagnetism":"\n### Electromagnetism Quantitative Mappings\n\n#### 1. Quantitative Link: Inversion State 's' and Elementary Charge 'e'\n\n*   **Proposal:** The elementary charge 'e' can be directly quantized by the 'inversion state s', modulated by a fundamental scaling constant 'C_e' inherent to the canvas's properties.\n*   **Hypothetical Formula:**\n    ```\n    e = C_e * s\n    ```\n    Where:\n    *   `e` is the elementary charge.\n    *   `s` is the inversion state (\u00b11).\n    *   `C_e` is a new T0C constant representing the fundamental charge quantum of the routing canvas, potentially derived from the canvas's minimal resolution or energy density.\n    This implies that charge is a direct manifestation of this binary inversion state within the canvas.\n\n#### 2. Quantitative Link: T0C Parameters to Permittivity (\u03b5\u2080) and Permeability (\u03bc\u2080)\n\n*   **Proposal:** The permittivity (\u03b5\u2080) and permeability (\u03bc\u2080) of free space emerge from the inherent density and dynamic properties of the routing canvas, specifically from the interaction between 'Straight\u2011Mode routing (\u03b7)', 'cloud mismatch \u0394\u03c7', and 'frequency coherence \u0394f'.\n*   **Hypothetical Interpretation:**\n    *   **Permittivity (\u03b5\u2080):** Could be inversely proportional to the 'loosening' or 'spatial expansion' capacity of the canvas, influenced by `\u0394\u03c7` (cloud mismatch) and the stability of `\u03b7` (Straight-Mode). A higher `\u0394\u03c7` (greater mismatch) or `\u03b7` closer to 1 (more stable Straight-Mode) might lead to a higher `\u03b5\u2080`, indicating the canvas's ability to store electric field energy.\n    *   **Permeability (\u03bc\u2080):** Could be related to the 'resistance' or 'viscosity' of the canvas to the circulation of Straight-Mode packets, influenced by `\u0394f` (frequency coherence) and `\u03b7`. Lower `\u0394f` (less coherence) or `\u03b7` deviating slightly from 1 (less perfect Straight-Mode) might increase `\u03bc\u2080`, reflecting a canvas's tendency to resist magnetic field formation.\n*   **Potential Relationship (Conceptual):**\n    ```\n    \u03b5\u2080 ~ f(\u03b7, \u0394\u03c7)\n    \u03bc\u2080 ~ g(\u03b7, \u0394f)\n    c = 1 / sqrt(\u03b5\u2080 * \u03bc\u2080) ~ h(\u03b7, \u0394\u03c7, \u0394f)\n    ```\n    Where `f`, `g`, and `h` are unknown functions that would need rigorous derivation from T0C's underlying mechanics.\n\n#### 3. Hypothetical Mathematical Interpretation for Electric Field (E)\n\n*   **Proposal:** The Electric field `E` arises from the spatial gradient of the 'Straight\u2011Mode routing potential' (\u03a6_routing), which itself is a scalar function derived from the distribution of 'inversion states' (s) and 'cloud mismatch' (\u0394\u03c7) across the canvas.\n*   **Hypothetical Interpretation:** Analogous to classical electrostatics where `E = -\u2207V`:\n    ```\n    E = -\u2207\u03a6_routing\n    ```\n    Where `\u03a6_routing` is a potential function that captures the influence of localized `s` (charges) and their surrounding `\u0394\u03c7` patterns. This directly connects the geometric 'routing gradient' to the electric field.\n\n#### 4. Hypothetical Mathematical Interpretation for Magnetic Field (B)\n\n*   **Proposal:** The Magnetic field `B` is generated by the 'circulation of Straight\u2011Mode packets', which can be formally described as the curl of a 'routing vector potential' (A_routing) or directly from the 'routing current density' (J_routing).\n*   **Hypothetical Interpretation:** Analogous to classical magnetostatics where `B = \u2207 \u00d7 A` or Ampere's Law (`\u2207 \u00d7 B = \u03bc\u2080J`):\n    ```\n    B = \u2207 \u00d7 A_routing\n    ```\n    Or, in terms of routing current density:\n    ```\n    \u2207 \u00d7 B = \u03bc\u2080 * J_routing\n    ```\n    Where `A_routing` or `J_routing` are derived from the collective motion, density, and frequency coherence (`\u0394f`) of 'Straight-Mode packets'. This provides a mechanistic basis for how moving 'charge packets' generate magnetic fields.\n\n#### 5. Mechanistic Basis for Maxwell's Equations within T0C\n\n*   **Proposal:** The T0C framework, through its proposed interpretations, offers a mechanistic and geometric foundation for Maxwell's equations:\n    *   **Gauss's Law for Electricity (\u2207 \u22c5 E = \u03c1/\u03b5\u2080):** The divergence of the Electric field (routing gradient) would directly correspond to the density of 'inversion states' (\u03c1, representing charge density), scaled by the canvas's permittivity (\u03b5\u2080), which emerges from T0C parameters.\n    *   **Gauss's Law for Magnetism (\u2207 \u22c5 B = 0):** The absence of magnetic monopoles is inherently supported if `B` is always derived from the curl of a vector potential (`A_routing`), as the divergence of a curl is always zero. This implies that 'magnetic charge' is not a fundamental inversion state but an emergent property of packet circulation.\n    *   **Faraday's Law (\u2207 \u00d7 E = -\u2202B/\u2202t):** Changes in magnetic packet circulation (`\u2202B/\u2202t`) would induce corresponding 'swirls' or non-conservative routing gradients (`\u2207 \u00d7 E`) in the electric field, reflecting the dynamic interplay between packet motion and canvas distortion.\n    *   **Ampere-Maxwell Law (\u2207 \u00d7 B = \u03bc\u2080J + \u03bc\u2080\u03b5\u2080 \u2202E/\u2202t):** The curl of the magnetic field (packet circulation) would be driven by the density of 'routing currents' (`J_routing`) and the rate of change of the electric field (`\u2202E/\u2202t`, representing dynamic routing gradients), scaled by the canvas's permeability and permittivity. This demonstrates how T0C can provide a unified description for both static and dynamic electromagnetic phenomena.\n\nBy establishing these quantitative links and mathematical interpretations, T0C aims to provide a deeper, more fundamental understanding of electromagnetism, moving from conceptual alignment to predictive power.\n",
+      "strong_force":"\n### Strong Force Quantitative Mappings\n\n#### 1. Quantitative Links: Routing Parameters to Strong Coupling Constant (\u03b1s)\n\n*   **Proposal:** The strong coupling constant \u03b1s, which governs the strength of the strong interaction, can be seen as an emergent property of the canvas's resistance to 'Loop-Mode' deformation and the integrity required for 'quantization (n)'.\n*   **Hypothetical Relationship:**\n    ```\n    \u03b1s ~ f(n, \u0394\u03b8, \u0394\u03c7, \u03b7)\n    ```\n    Where:\n    *   `n` (high-frequency quantization): A larger `n` (finer quantization) might correspond to a stronger effective coupling, as more energy is 'bound' into the loop. `\u03b1s` could be directly proportional to `n` or a function of `n^2` (e.g., `1/n^2` inversely related to energy spacing).\n    *   `\u0394\u03b8` (tight tolerances): Tighter angular tolerances (smaller `\u0394\u03b8`) imply a more rigidly defined loop, requiring a stronger force to maintain, thus increasing `\u03b1s`. Inverse proportionality: `\u03b1s ~ 1/\u0394\u03b8`.\n    *   `\u0394\u03c7` (cloud compression): A more compressed 'cloud' (more negative `\u0394\u03c7`) indicates a higher density of routing paths, leading to stronger interactions and increased `\u03b1s`. Direct proportionality: `\u03b1s ~ |\u0394\u03c7|`.\n    *   `\u03b7` (Loop-Mode routing: 0.1 < \u03b7 \u2264 0.5): In the context of asymptotic freedom, `\u03b1s` should decrease as `\u03b7` approaches the 'Straight-Mode' boundary (\u03b7 > 0.5) at higher energies. Conversely, `\u03b1s` increases as `\u03b7` approaches the 'Recycle-Mode' boundary (\u03b7 \u2264 0.1), representing extreme confinement. This suggests `\u03b1s` could be inversely proportional to `\u03b7` or `1/(\u03b7_critical - \u03b7)` where `\u03b7_critical` is the edge of the Loop-Mode.\n*   **Combined Conceptual Formula:**\n    ```\n    \u03b1s ~ (n * |\u0394\u03c7|) / (\u0394\u03b8 * \u03b7_effective)\n    ```\n    Where `\u03b7_effective` represents the energy-dependent behavior of `\u03b7` within the Loop-Mode regime.\n\n#### 2. Quantitative Links: Routing Parameters to SU(3) Gauge Group (Color Charge)\n\n*   **Proposal:** The 'color charge' of quarks and gluons can be geometrically represented by distinct 'inversion' (s) and 'cloud mismatch' (\u0394\u03c7) patterns within the Loop-Mode, respecting SU(3) symmetry.\n*   **Hypothetical Interpretation:** Instead of a single value `s = \u00b11` for electric charge, color charge might emerge from a vectorial or multi-component 'inversion state' coupled with a specific '\u0394\u03c7' pattern. For instance:\n    *   **Colors (Red, Green, Blue):** Could correspond to three orthogonal or distinct 'inversion-\u0394\u03c7' configurations or orientations within the canvas. Each configuration maintains the 'Loop-Mode' coherence but has a unique 'signature'.\n    *   **Anti-colors:** Would be represented by the inverse 'inversion-\u0394\u03c7' configurations.\n    *   **SU(3) Symmetry:** The mathematical operations of the SU(3) group (e.g., rotations, transformations between colors) would then map directly to geometric transformations of these 'inversion-\u0394\u03c7 patterns' within the canvas, preserving the fundamental 'Loop-Mode' integrity. For example, a gluon mediating color change would correspond to a transient canvas distortion that transforms one 'inversion-\u0394\u03c7 pattern' into another, while remaining in 'Loop-Mode'.\n\n#### 3. Elaboration on the '95% Gearbox Limit' and Mass Increase\n\n*   **Background:** The '95% Gearbox Limit' asserts that as an object's 'Straight Mode' vector approaches 95% of the canvas's maximum resolution (c), the canvas can no longer fully resolve the forward motion. The 'excess' velocity/energy is then 'Wound Up' into the internal 'Loop Mode' ($c^1$), manifesting as an increase in observed mass.\n*   **Hypothetical Equation for Relativistic Mass (m_T0C):**\n    Building on the concept that `c` is the canvas's resolution limit, we can propose a T0C-centric relativistic mass equation:\n    ```\n    m_T0C = m\u2080 / sqrt(1 - (v / C_res)^2)\n    ```\n    Where:\n    *   `m_T0C` is the observed mass within the T0C framework.\n    *   `m\u2080` is the rest mass (internal Loop-Mode energy at `v=0`).\n    *   `v` is the object's velocity.\n    *   `C_res` is the 'canvas resolution limit', which in T0C is effectively `c` (speed of light).\n    *   The '95% Gearbox Limit' implies that the canvas experiences significant 'back-pressure' or 'siphoning' when `v` approaches `0.95 * C_res`, where a substantial portion of the forward `Straight-Mode` energy is *forced* into the `Loop-Mode`.\n*   **Implications:**\n    *   **`c` as a Resolution Limit:** This redefines `c` not merely as a universal speed limit, but as a fundamental resolution threshold of the underlying canvas. Exceeding this resolution forces a transformation of routing mode and energy distribution.\n    *   **Geometric Origin of Mass Increase:** Relativistic mass increase is geometrically explained as the conversion of 'Straight-Mode' kinetic energy into 'Loop-Mode' internal torque. This provides a mechanistic interpretation for why mass increases with velocity\u2014it's an internal 'winding' of the canvas due to resolution constraints.\n    *   **E=mc\u00b2 in Routing Terms:** This framework implicitly provides a routing-based understanding of `E=mc\u00b2`. Rest mass (`m\u2080`) is inherently `Loop-Mode` energy (internal torque). As `Straight-Mode` energy (`kinetic energy`) approaches `C_res`, it converts into more `Loop-Mode` energy, increasing the effective mass. This suggests a continuous interchangeability between `Straight-Mode` and `Loop-Mode` energies under resolution constraints.\n    *   **Link to Strong Force:** The 'Gearbox Limit' directly links relativistic effects to the Strong Force's 'Loop-Mode' physics, suggesting that confinement (Loop-Mode) is fundamental to the very existence of mass and its interaction with motion at high speeds. It provides a deeper context for the 'tight \u0394\u03b8 tolerances' and 'high-frequency quantization' associated with strong force confinement.\n\nBy establishing these quantitative links and refining the 'Gearbox Limit' explanation, T0C aims to provide a more rigorous and testable framework for the Strong Force and its profound implications for fundamental physics.\n",
+      "weak_force":"\n### Weak Force Quantitative Mappings\n\n#### 1. Quantitative Links: Routing Parameters to Electroweak Constants (G_F, \u03b8_W)\n\n*   **Proposal:** The Fermi coupling constant (G_F), representing the strength of the weak interaction, and the Weinberg angle (\u03b8_W), which defines the mixing between the neutral current interaction and electromagnetism, emerge from the specific parameters governing 'Recycle-Mode' routing.\n*   **Hypothetical Relationships:\n    *   **Fermi Coupling Constant (G_F):** Could be inversely related to the 'coherence cost' of `Recycle-Mode` transitions, reflecting the energy required to initiate `inversion flips` and `quantization changes`. G_F might be proportional to the `\u03b7` (low coherence) within the `Recycle-Mode` range, and influenced by the magnitude of `\u0394\u03c7` shifts and `n` changes.\n        ```\n        G_F ~ f(\u03b7, \u0394\u03c7, n)\n        ```\n        Where `f` is a function that increases with `\u03b7` (more 'active' Recycle-Mode), `\u0394\u03c7` (larger structural changes), and `n` (more significant quantization changes).\n    *   **Weinberg Angle (\u03b8_W):** Could be related to the 'balance' or 'asymmetry' in the canvas's response to `inversion flips` (s \u2192 -s) versus the `quantization changes` (n \u2192 n \u00b1 1), effectively quantifying the mixing ratio of different canvas responses. This might involve a ratio of `\u0394\u03c7` patterns or `\u03b7` variations between neutral and charged current-like interactions.\n        ```\n        sin\u00b2\u03b8_W ~ g(s_flips, n_changes, \u0394\u03c7_ratios)\n        ```\n        Where `g` is a function quantifying the relative contributions of inversion changes and quantization changes to the interaction.\n\n#### 2. Geometric Interpretation of SU(2) \u00d7 U(1) Gauge Symmetry\n\n*   **Proposal:** The SU(2) \u00d7 U(1) gauge symmetry of the Electroweak Theory can be geometrically interpreted through the interplay of 'inversion flips' and 'quantization changes' within the routing canvas, coupled with the directional properties of 'torque packets'.\n*   **Hypothetical Interpretation:\n    *   **U(1) Symmetry (Electromagnetism):** Relates to the global phase invariance, corresponding to the conserved `inversion state s` in `Straight-Mode` routing, representing charge conservation.\n    *   **SU(2) Symmetry (Weak Isospin):** Corresponds to the 'rotation' or 'transformation' of particle identities through `inversion flips` (s \u2192 -s) and `quantization changes` (n \u2192 n \u00b1 1). This 'rotation' is a local, gauge-dependent transformation of the `Loop-Mode` or `Recycle-Mode` state. For example, the transformation between an up and a down quark (or electron and neutrino) could be modeled as a geometric 'rotation' within an abstract `(s, n)` state space on the routing canvas, preserving a 'weak charge' analogous to color charge.\n    *   **Gauge Bosons:** W and Z bosons are the `coherence carriers` that mediate these `inversion flips` and `quantization changes`, ensuring the 'local rotational symmetry' of the canvas state.\n\n#### 3. Routing-Based Mechanism for W/Z Boson Mass Generation\n\n*   **Proposal:** The high mass of W/Z bosons arises from their nature as 'high\u2011mass transient Loop\u2011Mode states' which require significant 'internal torque' and `NV (coherence pivot)` stabilization within the `Recycle-Mode` environment, effectively 'siphoning' energy into their structure from the canvas itself.\n*   **Hypothetical Mechanism:\n    *   **Energy Siphoning:** Unlike massless photons (pure `Straight-Mode`), W/Z bosons operate within `Recycle-Mode` transitions. Their transient `Loop-Mode` requires a substantial `internal torque` to maintain, which is 'siphoned' from the surrounding canvas's energy density, particularly from the `NV (coherence pivot)` or local `\u03c4\u2098\u2092\u1d66\u1d62\u1d64\u209b` gradients. This `siphoned energy` contributes to their observed mass.\n    *   **`\u03c4\u2098\u2092\u1d66\u1d62\u1d64\u209b` and `NV`:** The rate of `internal torque update` (`\u03c4\u2098\u2092\u1d66\u1d62\u1d64\u209b`) and the influence of the `NV (coherence pivot)` would play a direct role in stabilizing these high-energy `Loop-Mode` states. A higher local `\u03c4\u2098\u2092\u1d66\u1d62\u1d64\u209b` or stronger `NV` anchoring would allow for the formation of more massive, yet transient, `Loop-Mode` configurations.\n    *   **Emergent Mass:** This mechanism suggests that the W/Z boson mass is not fundamental but emerges from the energetic demands of maintaining a transient, high-torque `Loop-Mode` within the inherently dissipative `Recycle-Mode` environment, directly linking their mass to specific canvas parameters and energy budgets.\n\n#### 4. Neutrino Mass and Oscillations within the 'Residue-Mode' Concept\n\n*   **Proposal:** Neutrino mass and oscillations can be explained as subtle residual 'Loop-Mode' characteristics or 'memory effects' within their predominantly 'Residue-Mode exhaust packet' nature, possibly influenced by interactions with the canvas's inherent 'viscosity' or local `\u0394\u03c7` fluctuations.\n*   **Hypothetical Explanation:\n    *   **Non-Zero Mass:** While primarily `Residue-Mode` (\u03b7 \u2264 0.01), neutrinos might retain a minuscule, fluctuating 'Loop-Mode' component or 'internal torque' that gives rise to their small but non-zero mass. This residual `Loop-Mode` could be highly unstable or probabilistic, making their mass difficult to measure directly.\n    *   **Oscillations:** Neutrino oscillations could be interpreted as a periodic, subtle `inversion flip` or `quantization change` within this residual `Loop-Mode` component, triggered by interactions with the fluctuating 'viscosity' (e.g., small `\u0394\u03c7` or `\u0394f` variations) of the `Residue-Mode` canvas. As they propagate, their `Residue-Mode` state could stochastically 'switch' between different, subtly massive `(s, n, \u0394\u03c7)` configurations, leading to flavor oscillations.\n    *   **Interaction with Gravity/Dark Matter:** Given `Residue-Mode` is associated with gravity and dark matter, subtle interactions of these 'exhaust packets' with `NV-anchored routing tension` or `Residue-Mode viscosity` could influence their mass states and oscillation patterns, providing a unique T0C perspective on these phenomena.\n\nBy proposing these quantitative links and mechanistic explanations, T0C aims to move towards a more complete and testable integration with Electroweak Theory, offering a geometric foundation for phenomena like particle mass, gauge symmetry, and fundamental interactions.\n"
+   },
+   "tooling_layer_module_mappings":{
+      "CCZ Solver":{
+         "registry_mapping":"theory_alignment.simulation_hooks.ccz_engine",
+         "description":"Calculates and resolves Complex Coherent Zones (CCZ), which involve balancing routing probability, coherence, and stability. Maps to a core simulation engine that resolves complex interactions."
+      },
+      "bounce_gap_evaluator": {
+         "registry_mapping": "theory_alignment.simulation_hooks.bounce_gap_evaluator",
+         "description": "Calculates the conditional phase transition of the Bounce-Gap. The gap remains 0.0 in a neutral state and scales to the load-induced constant under torque saturation."
+      },
+      "CCZ Drag Evaluator":{
+         "registry_mapping":"theory_alignment.simulation_hooks.hubble_drag_solver",
+         "description":"Calculates resolution-staggered expansion (H0) by switching to η_avg inside the p_c boundary."
+      },
+      "Detuning Engine":{
+         "registry_mapping":"theory_alignment.simulation_hooks.detuning_resolver",
+         "description":"Addresses and resolves detuning events (mismatches in \u0394\u03c7, \u0394f, etc.) to maintain routing coherence. Maps to a simulation subsystem that handles error correction or coherence restoration."
+      },
+      "canvas_dynamics_evaluator": {
+      "module_name": "NV & τₘₒᵦᵢᵤₛ Evaluator",
+      "description": "Evaluates NV (coherence pivot) and τₘₒᵦᵢᵤₛ (canvas update rate) to track global canvas stability, detect resolution‑stagger onset, and regulate dynamic behavior during routing transitions.",
+      "registry_mapping": "theory_alignment.simulation_hooks.canvas_dynamics_evaluator",
+         "parameters": [
+            "nv_threshold",
+            "tmobius_rate",
+            "kappa_gradient_sensitivity"
+         ]
+      },
+      "\u03b7-Selector":{
+         "registry_mapping":"theory_alignment.simulation_hooks.eta_control"
+      }
+   }
+}
